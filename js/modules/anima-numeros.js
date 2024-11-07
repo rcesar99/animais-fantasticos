@@ -25,7 +25,7 @@ export default class AnimaNumeros {
 
   // Ativo incrementar número para cada número selecionado do dom
   animaNumeros() {
-    this.numeros.forEach((numero) => this.constructor.incrementoNumero(numero));
+    this.numeros.forEach((numero) => this.constructor.incrementarNumero(numero));
   }
 
   // função que ocorre quando a mutação ocorrer
