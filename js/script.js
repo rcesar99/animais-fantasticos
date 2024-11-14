@@ -4,6 +4,7 @@ import TabNav from "./modules/tabnav.js";
 import ScrollAnimated from "./modules/scroll-animated.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
+import SlideNav from "./modules/slide.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
 import Funcionamento from "./modules/funcionamento.js";
@@ -34,9 +35,12 @@ dropDownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-const horarioFuncionamento = new Funcionamento('[data-semana]', 'aberto');
+const horarioFuncionamento = new Funcionamento("[data-semana]", "aberto");
 horarioFuncionamento.init();
+
+const slide = new SlideNav(".slide", ".slide-wrapper");
+slide.init();
+slide.addControl(".custom-controls");
 
 fetchAnimais("./animaisapi.json", ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
-
