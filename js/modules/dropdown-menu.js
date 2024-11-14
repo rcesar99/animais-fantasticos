@@ -8,7 +8,7 @@ export default class DropdownMenu {
     if (events === undefined) {
       this.events = ["touchstart", "click"]; // Valor padrão caso não seja definido.
     } else {
-      this.events = events; // caso queira trocar os events da função, é define na criação do objeto(classe).
+      this.events = events; // caso queira trocar os events da função, é definido na criação do objeto(classe).
     }
 
     this.activeClass = "active"; // <- caso queira trocar o nome da classe
@@ -29,7 +29,7 @@ export default class DropdownMenu {
   addDropDownMenusEvent() {
     this.dropdownMenus.forEach((menu) => {
       this.events.forEach((userEvent) => {
-        menu.addEventListener(userEvent, this.activeDropDownMenu, { passive: true }); // "passive: true" = Você não vai cancelar o comportamento padrão ( com preventDefault()), então o navegador pode agir imediatamente, sem precisar esperar pelo código terminar a execução.
+        menu.addEventListener(userEvent, this.activeDropDownMenu);
       });
     });
   }

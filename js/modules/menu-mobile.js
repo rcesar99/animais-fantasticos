@@ -16,7 +16,8 @@ export default class MenuMobile {
     this.openMenu = this.openMenu.bind(this);
   }
 
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault();
     this.menuList.classList.add(this.activeClass);
     this.menuButton.classList.add(this.activeClass);
     outsideClick(this.menuList, this.events, () => {
@@ -26,8 +27,7 @@ export default class MenuMobile {
   }
 
   addMenuMobileEvents() {
-    // "passive: true" = Você não vai cancelar o comportamento padrão ( com preventDefault()), então o navegador pode agir imediatamente, sem precisar esperar pelo código terminar a execução.
-    this.events.forEach((evento) => this.menuButton.addEventListener(evento, this.openMenu, { passive: true }));
+    this.events.forEach((evento) => this.menuButton.addEventListener(evento, this.openMenu));
   }
 
   init() {
