@@ -29,7 +29,7 @@ export default class DropdownMenu {
   addDropDownMenusEvent() {
     this.dropdownMenus.forEach((menu) => {
       this.events.forEach((userEvent) => {
-        menu.addEventListener(userEvent, this.activeDropDownMenu);
+        menu.addEventListener(userEvent, this.activeDropDownMenu, { passive: true }); // "passive: true" = Você não vai cancelar o comportamento padrão ( com preventDefault()), então o navegador pode agir imediatamente, sem precisar esperar pelo código terminar a execução.
       });
     });
   }
